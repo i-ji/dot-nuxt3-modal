@@ -10,12 +10,13 @@
 </template>
 
 <style>
-.fade-enter-active .fade-leave-active {
-  transition: all 0.4s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: transform 0.4s;
 }
 
-.fade-leave-to .fade-enter-from {
-  opacity: 0;
+.fade-enter-from,
+.fade-leave-to {
   transform: translateY(-500px);
 }
 </style>
@@ -27,6 +28,7 @@ useHead({
 
 import { ref } from "vue";
 const toggle = ref(true);
+const show = ref(true);
 
 const openWindow = () => {
   toggle.value = false;
